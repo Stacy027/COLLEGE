@@ -2,11 +2,21 @@
 code & data for paper "Contrastive Language-Knowledge Graph Pre-training"
 ### Overview
 
+## Requirements
+
+- [PyTorch](http://pytorch.org/) version >= 1.18.0
+- Python version >= 3.8
+- For training new models, you'll also need an NVIDIA GPU
+
 ## Download pretrained models
 You can download pretrained COLLEGE models below.
 | Model | Size | Pretraining Text | Pretraining Knowledge Graph | Download Link |
 | ------------- | --------- | ---- | ---- | ---- |
-| COLLEGE   | 360M parameters | Wikipedia | Wikidata | [model checkpoint](https://nlp.stanford.edu/projects/myasu/DRAGON/models/general_model.pt) |
+| COLLEGE   | 320M parameters | Wikipedia | Wikidata | [model checkpoint](https://nlp.stanford.edu/projects/myasu/DRAGON/models/general_model.pt) |
+
+```bash
+mkdir model
+```
 
 ## Re-train rhe COLLEGE
 ### 1. Download the data
@@ -14,6 +24,7 @@ You can download pretrained COLLEGE models below.
 Download the latest wiki dump (XML format):
 
 ```bash
+cd wikidata
 wget -c https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 ```
 
@@ -51,35 +62,35 @@ python preprocess/data.py 32
 cd code/
 python -m torch.distributed.launch --nproc_per_node n train_2hop.py —gpu_num=n # replace the $n$ as the gpu number
 ```
-## Run the experiments
 
-Download the datasets for the experiments in the paper: [Google Drive](https://drive.google.com/file/d/1UNXICdkB5JbRyS5WTq6QNX4ndpMlNob6/view?usp=sharing).
+## Run the experiments
+For the downstream experiments on COLLEGE, please refer to the codes in the [CoLAKE repo](https://github.com/txsun1997/CoLAKE) and download the datasets for the experiments in the paper: [Google Drive](https://drive.google.com/file/d/1UNXICdkB5JbRyS5WTq6QNX4ndpMlNob6/view?usp=sharing).
 
 ```bash
 python download_gdrive.py 1UNXICdkB5JbRyS5WTq6QNX4ndpMlNob6 ./data.tar.gz
 tar -xzvf data.tar.gz
-cd finetune/
 ```
 
-#### FewRel
+### Knowledge Probing (LAMA and LAMA-UHN)
 
 ```bash
-python run_re.py --debug --gpu 0
-```
-
-#### Open Entity
-
-```bash
-python run_typing.py --debug --gpu 0
-```
-
-#### LAMA and LAMA-UHN
-
-```bash
-cd ../lama/
+cd lama
 python eval_lama.py
 ```
+
+### Language Understanding Tasks(GLUE)
+
+For the fine-tuning on GLUE tasks, refer to the [official guide of RoBERTa](examples/roberta/README.glue.md).
 
 
 ## Citation
 If you find our work helpful, please cite the following:
+
+
+## Acknowledgments
+
+- [CoLAKE](https://github.com/txsun1997/CoLAKE)
+
+- [LAMA](https://github.com/facebookresearch/LAMA)
+
+- [ERNIE](https://github.com/thunlp/ERNIE)
