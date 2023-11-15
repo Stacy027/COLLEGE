@@ -6,6 +6,7 @@ COLLEGE (**Co**ntrastive **L**anguage-Know**le**dge **G**raph Pr**e**-training) 
 <p align="center">
   <img src="./model.pdf" width="1000" title="COLLEGE model overview" alt="">
 </p>
+
 ## Requirements
 
 - [PyTorch](http://pytorch.org/) version >= 1.18.0
