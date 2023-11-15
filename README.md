@@ -4,7 +4,7 @@ code & data for paper "Contrastive Language-Knowledge Graph Pre-training"
 COLLEGE (**Co**ntrastive **L**anguage-Know**le**dge **G**raph Pr**e**-training) leverages contrastive learning to incorporate factual knowledge into PLMs. This approach maintains the knowledge in its original graph structure to provide the most available information and circumvents the issue of heterogeneous embedding fusion. Experimental results demonstrate that our approach achieves more effective results on several knowledge-intensive tasks compared to previous state-of-the-art methods.
 
 <p align="center">
-  <img src="model.pdf" width="1000" title="COLLEGE model overview" alt="">
+  <img src="model.png" width="1000" title="COLLEGE model overview" alt="">
 </p>
 
 ## Requirements
