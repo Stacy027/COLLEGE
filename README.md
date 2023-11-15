@@ -17,7 +17,7 @@ COLLEGE (**Co**ntrastive **L**anguage-Know**le**dge **G**raph Pr**e**-training) 
 You can download pretrained COLLEGE models below and put it in the model directory.
 | Model | Size | Pretraining Text | Pretraining Knowledge Graph | Download Link |
 | ------------- | --------- | ---- | ---- | ---- |
-| COLLEGE   | 320M parameters | Wikipedia | Wikidata | [model checkpoint](https://nlp.stanford.edu/projects/myasu/DRAGON/models/general_model.pt) |
+| COLLEGE   | 320M parameters | Wikipedia | Wikidata | [model checkpoint](https://drive.google.com/file/d/1aUgl4zC7T_vs01nlLruJqmXbZtOxxl2S/view?usp=sharing) |
 
 
 ## Re-train the COLLEGE
