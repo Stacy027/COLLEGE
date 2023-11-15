@@ -15,10 +15,8 @@ from batch_eval_KB_completion import run_evaluation
 # common_vocab_path = None
 common_vocab_path = "./lama/vocab_bert_roberta.txt"
 
-# common_vocab_path = "/home/yuanxiaowei/lama/data/common_vocab_cased.txt"
-# model_path = "/share/project/yxw/COLLEGE/model_8"
-# model_path = "./dragon/model/general_model.pt"  # new epoch
-model_path = None
+model_path = "./model/model.pt"
+# model_path = None
 
 def get_TREx_parameters(data_path_pre="./lama/data/"):
     relations = load_file("{}relations.jsonl".format(data_path_pre))
