@@ -66,7 +66,7 @@ python -m torch.distributed.launch --nproc_per_node n train_2hop.py —gpu_num=n
 ```
 
 ## Run the experiments
-For the downstream experiments on COLLEGE, please refer to the codes in the [CoLAKE repo](https://github.com/txsun1997/CoLAKE) and download the datasets for the experiments in the paper: [Google Drive](https://drive.google.com/file/d/1UNXICdkB5JbRyS5WTq6QNX4ndpMlNob6/view?usp=sharing).
+Download the datasets for the experiments in the paper: [Google Drive](https://drive.google.com/file/d/1UNXICdkB5JbRyS5WTq6QNX4ndpMlNob6/view?usp=sharing).
 
 ```bash
 python download_gdrive.py 1UNXICdkB5JbRyS5WTq6QNX4ndpMlNob6 ./data.tar.gz
@@ -81,7 +81,9 @@ python eval_lama.py
 ```
 
 ### Knowledge-driven Tasks (Entity & Relation)
-We release the fine-tuned model [checkpoint for knowledge-driven tasks](https://cloud.tsinghua.edu.cn/f/e03f7a904526498c81a4/?dl=1).
+For the other experiments on COLLEGE, please refer to the codes in the [CoLAKE repo](https://github.com/txsun1997/CoLAKE).
+
+We also release the fine-tuned model [checkpoint for knowledge-driven tasks](https://cloud.tsinghua.edu.cn/f/e03f7a904526498c81a4/?dl=1).
 
 ### Language Understanding Tasks(GLUE)
 For the fine-tuning on GLUE tasks, refer to the [official guide of RoBERTa](examples/roberta/README.glue.md).
