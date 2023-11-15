@@ -83,7 +83,7 @@ python eval_lama.py
 ### Knowledge-driven Tasks (Entity & Relation)
 For the other experiments on COLLEGE, please refer to the codes in the [CoLAKE repo](https://github.com/txsun1997/CoLAKE).
 
-We also release the fine-tuned model [checkpoint for knowledge-driven tasks](https://cloud.tsinghua.edu.cn/f/e03f7a904526498c81a4/?dl=1).
+We also release the fine-tuned model [checkpoint](https://cloud.tsinghua.edu.cn/f/e03f7a904526498c81a4/?dl=1) for knowledge-driven tasks.
 
 ### Language Understanding Tasks(GLUE)
 For the fine-tuning on GLUE tasks, refer to the [official guide of RoBERTa](examples/roberta/README.glue.md).
