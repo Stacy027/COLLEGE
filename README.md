@@ -81,7 +81,7 @@ python eval_lama.py
 ```
 
 ### Language Understanding Tasks(GLUE)
-
+We release the fine-tuned model [checkpoint for knowledge-driven tasks](https://cloud.tsinghua.edu.cn/f/e03f7a904526498c81a4/?dl=1).
 For the fine-tuning on GLUE tasks, refer to the [official guide of RoBERTa](examples/roberta/README.glue.md).
 
 
