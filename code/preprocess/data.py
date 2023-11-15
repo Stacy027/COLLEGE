@@ -189,10 +189,10 @@ def find_extra_nodes(qids):
     return bridge_nodes2
 
 def run_proc(index, n, file_list, min_seq_len=80, max_seq_len=200, n_samples_per_file=5000):
-    output_folder_graph = '/share/project/yxw/output_graph_/' + str(index)
+    output_folder_graph = './output_graph/' + str(index)
     if not os.path.exists(output_folder_graph):
         os.makedirs(output_folder_graph)
-    output_folder_text = '/share/project/yxw/output_text_/' + str(index)
+    output_folder_text = './output_text/' + str(index)
     if not os.path.exists(output_folder_text):
         os.makedirs(output_folder_text)
     j = index
@@ -206,9 +206,7 @@ def run_proc(index, n, file_list, min_seq_len=80, max_seq_len=200, n_samples_per
     for i in range(len(file_list)):
         if i % n == index:
             input_name = file_list[i]
-            # print(input_name)
-            # target_filename_graph = input_name.replace('/sharefs/yxw/output_text_filter', "/sharefs/yxw/output_graph_2hop")
-            # fout1 = open(target_filename_graph, 'w', encoding='utf-8')
+           
             print('[processing] # {}/{}: {}'.format(i, index, input_name))
             with open(input_name, 'r', encoding='utf-8') as fin:
                 
@@ -258,9 +256,6 @@ def run_proc(index, n, file_list, min_seq_len=80, max_seq_len=200, n_samples_per
                         # words_ids              = [tokenizer.cls_token_id]
                         anchors                = [x.strip() for x in block.split("sepsepsep")]
 
-                        #-----------------------#
-                        # 实体链接
-                        #-----------------------#
                         for x in anchors:
                             if len(x) < 1:
                                 continue
