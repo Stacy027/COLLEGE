@@ -15,7 +15,7 @@ You can download pretrained COLLEGE models below and put it in the model directo
 | COLLEGE   | 320M parameters | Wikipedia | Wikidata | [model checkpoint](https://nlp.stanford.edu/projects/myasu/DRAGON/models/general_model.pt) |
 
 
-## Re-train rhe COLLEGE
+## Re-train the COLLEGE
 ### 1. Download the data
 
 Download the latest wiki dump (XML format):
