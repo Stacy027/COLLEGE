@@ -9,14 +9,11 @@ code & data for paper "Contrastive Language-Knowledge Graph Pre-training"
 - For training new models, you'll also need an NVIDIA GPU
 
 ## Download pretrained models
-You can download pretrained COLLEGE models below.
+You can download pretrained COLLEGE models below and put it in the model directory.
 | Model | Size | Pretraining Text | Pretraining Knowledge Graph | Download Link |
 | ------------- | --------- | ---- | ---- | ---- |
 | COLLEGE   | 320M parameters | Wikipedia | Wikidata | [model checkpoint](https://nlp.stanford.edu/projects/myasu/DRAGON/models/general_model.pt) |
 
-```bash
-mkdir model
-```
 
 ## Re-train rhe COLLEGE
 ### 1. Download the data
