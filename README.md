@@ -62,7 +62,7 @@ python preprocess/data.py 32
 
 ```bash
 cd code/
-python -m torch.distributed.launch --nproc_per_node n train_2hop.py —gpu_num=n # replace the $n$ as the gpu number
+python -m torch.distributed.launch --nproc_per_node n code/run.py —gpu_num=n # replace the $n$ as the gpu number
 ```
 
 ## Run the experiments
