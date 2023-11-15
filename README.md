@@ -1,7 +1,7 @@
 # COLLEGE
 code & data for paper "Contrastive Language-Knowledge Graph Pre-training"
 ### Overview
-
+\textsc{College} ($\mathbf{Co}$ntrastive $\mathbf{L}$anguage-Know$\mathbf{le}$dge $\mathbf{G}$raph Pr$\mathbf{e}$-training) leverages contrastive learning to incorporate factual knowledge into PLMs. This approach maintains the knowledge in its original graph structure to provide the most available information and circumvents the issue of heterogeneous embedding fusion. Experimental results demonstrate that our approach achieves more effective results on several knowledge-intensive tasks compared to previous state-of-the-art methods.
 ## Requirements
 
 - [PyTorch](http://pytorch.org/) version >= 1.18.0
