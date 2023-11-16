@@ -60,7 +60,7 @@ if __name__ == "__main__":
     parser.add_argument("--local_rank", type=int, help="Local rank for distributed training")
     parser.add_argument('--gpu_num', type=int, default=4, help='Number of GPUs used in training')
     parser.add_argument('-batch_size', type=int, default=64, help='Batch size for training')
-    parser.add_argument('-epochs', type=int, default=10, help='Number of epochs for training')
+    parser.add_argument('-epochs', type=int, default=8, help='Number of epochs for training')
     parser.add_argument('-learning_rate', type=float, default=5e-5, help='Learning rate for training')
     parser.add_argument('-warmup_ratio', type=float, default=0.1, help='Warmup ratio for training')
     parser.add_argument('-weight_decay', type=float, default=0.01, help='Weight decay for training')
@@ -112,7 +112,7 @@ if __name__ == "__main__":
         {'params': [p for n, p in param_optimizer if not any(nd in n for nd in NO_DECAY)], 'weight_decay': args.weight_decay},
         {'params': [p for n, p in param_optimizer if any(nd in n for nd in NO_DECAY)], 'weight_decay': 0.0}
     ]
-    optimizer = torch.optim.AdamW(optimizer_grouped_parameters, lr=args.learning_rate)
+    optimizer = torch.optim.Adam(optimizer_grouped_parameters, lr=args.learning_rate)
 
     length = 5000 * len(text_list) # data volume
     num_batches_per_epoch = (length / args.batch_size) / n_gpus
