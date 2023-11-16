@@ -99,9 +99,8 @@ class GraphEncoder(nn.Module):
 
 class Clip(nn.Module):
 
-    def __init__(self, device, alpha=0.6):
+    def __init__(self, device):
         super().__init__()
-        self.alpha = alpha
         self.device = device
         self.textbert = TextEncoder(device)
         self.graphbert = GraphEncoder(device)
@@ -129,7 +128,7 @@ class Clip(nn.Module):
             F.cross_entropy(logits_per_text, labels)
             ) / 2
         # print(logits_per_text)
-        total_loss = self.alpha * loss + (1-self.alpha)/2 * mlm_loss_text + (1-self.alpha)/2 * mlm_loss_ent
+        total_loss = self.alpha * loss + mlm_loss_text + mlm_loss_ent
 
         return total_loss, loss, mlm_loss_text, mlm_loss_ent, logits_per_text
     
