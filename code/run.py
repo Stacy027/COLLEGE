@@ -11,8 +11,6 @@ from model import Clip
 from utils import show_config, OTFDistributedSampler
 from scheduler import cosine_lr
 
-# Constants
-NO_DECAY = ['bias', 'LayerNorm.bias', 'LayerNorm.weight', 'layer_norm.bias', 'layer_norm.weight']
 
 def train_one_epoch(local_rank, epoch, num_batches_per_epoch, model, train_loader, optimizer, scheduler, scaler):
     train_loader = tqdm(train_loader)
@@ -108,7 +106,7 @@ if __name__ == "__main__":
     model = nn.parallel.DistributedDataParallel(Clip(device).cuda(args.local_rank),
                                                 device_ids=[args.local_rank])
     
-    
+    NO_DECAY = ['bias', 'LayerNorm.bias', 'LayerNorm.weight', 'layer_norm.bias', 'layer_norm.weight']
     param_optimizer = list(model.named_parameters())
     optimizer_grouped_parameters = [
         {'params': [p for n, p in param_optimizer if not any(nd in n for nd in NO_DECAY)], 'weight_decay': args.weight_decay},
