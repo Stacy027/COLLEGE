@@ -50,6 +50,7 @@ Preprocess wiki dump:
 
 ```bash
 mkdir pretrain_data
+cd code/
 # process xml-format wiki dump
 python preprocess/WikiExtractor.py enwiki-latest-pages-articles.xml.bz2 -o pretrain_data/output -l --min_text_length 100 --filter_disambig_pages -it abbr,b,big --processes 4
 python preprocess/extract.py 4
