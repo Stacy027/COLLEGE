@@ -114,7 +114,7 @@ if __name__ == "__main__":
     ]
     optimizer = torch.optim.AdamW(optimizer_grouped_parameters, lr=args.learning_rate)
 
-    length = 5000*len(text_list) # data volume
+    length = 5000 * len(text_list) # data volume
     num_batches_per_epoch = (length / args.batch_size) / n_gpus
     warmup = num_batches_per_epoch * args.epochs * args.warmup_ratio
     scheduler = cosine_lr(optimizer, args.learning_rate, warmup, num_batches_per_epoch * args.epochs)
