@@ -92,8 +92,26 @@ For the fine-tuning on GLUE tasks, refer to the [official guide of RoBERTa](exam
 
 ## Citation
 If you find our work helpful, please cite the following:
-
-
+```bash
+@article{10.1145/3644820,
+author = {Yuan, Xiaowei and Liu, Kang and Wang, Yequan},
+title = {Contrastive Language-knowledge Graph Pre-training},
+year = {2024},
+issue_date = {April 2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {23},
+number = {4},
+issn = {2375-4699},
+url = {https://doi.org/10.1145/3644820},
+doi = {10.1145/3644820},
+journal = {ACM Trans. Asian Low-Resour. Lang. Inf. Process.},
+month = {apr},
+articleno = {51},
+numpages = {21},
+keywords = {Language Model, Knowledge Graph, Contrastive Learning}
+}
+```
 ## Acknowledgments
 
 - [CoLAKE](https://github.com/txsun1997/CoLAKE)
